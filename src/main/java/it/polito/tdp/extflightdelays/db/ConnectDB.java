@@ -8,7 +8,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 public class ConnectDB {
 
-	private static final String jdbcURL = "jdbc:mysql://localhost/extflightdelays";
+	private static final String jdbcURL = "jdbc:mariadb://localhost/extflightdelays";
 	private static HikariDataSource ds;
 	
 	public static Connection getConnection() {
@@ -17,9 +17,8 @@ public class ConnectDB {
 			HikariConfig config = new HikariConfig();
 			config.setJdbcUrl(jdbcURL);
 			config.setUsername("root");
-			config.setPassword("root");
+			config.setPassword("Datascience");
 			
-			// configurazione MySQL
 			config.addDataSourceProperty("cachePrepStmts", "true");
 			config.addDataSourceProperty("prepStmtCacheSize", "250");
 			config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
